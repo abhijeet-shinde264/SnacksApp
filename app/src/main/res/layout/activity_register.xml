@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="#285FBA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:text="Registration Page"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/signame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:textSize="15dp"/>
+
+        <EditText
+            android:id="@+id/sigdeg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:drawableLeft="@drawable/ic_baseline_how_to_reg_24"
+            android:inputType="textPersonName"
+            android:hint="Designation"
+            android:textSize="15dp"/>
+
+        <EditText
+            android:id="@+id/sigemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textSize="15dp"
+            android:hint="Email-Id"
+            android:drawableLeft="@drawable/ic_baseline_email_24"/>
+
+        <EditText
+            android:id="@+id/sigpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="15dp"
+            android:hint="Password"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+
+        <EditText
+            android:id="@+id/conpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="15dp"
+            android:hint="Conform Password"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="141dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_background"
+            android:text="Register" />
+    </LinearLayout>
+</ScrollView>

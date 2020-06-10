@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "142536267367",
+    "firebase_url": "https://snacks-app-75a94.firebaseio.com",
+    "project_id": "snacks-app-75a94",
+    "storage_bucket": "snacks-app-75a94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142536267367:android:b40720734f119fb84126c2",
+        "android_client_info": {
+          "package_name": "com.auapp.snacksapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142536267367-356cvf5jfleqk1v720jk2qmihlp0a5ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkix2Q4HlWxNaqDBpvg-c7bNoTnp9xmiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142536267367-356cvf5jfleqk1v720jk2qmihlp0a5ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
