@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity  {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Toast.makeText(MainActivity.this, "Welcome Back ", Toast.LENGTH_SHORT).show();
-                    Intent I = new Intent(MainActivity.this, FirstPage.class);
+                    Intent I = new Intent(MainActivity.this, ShowSnacks.class);
                     startActivity(I);
                     finish();
                 } else {
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity  {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Not sucessfull", Toast.LENGTH_SHORT).show();
                             } else {
-                                Intent i1 = new Intent(MainActivity.this, FirstPage.class);
+                                Intent i1 = new Intent(MainActivity.this, ShowSnacks.class);
                                 startActivity(i1);
                                 finish();
                                 Toast.makeText(MainActivity.this, "Sucess", Toast.LENGTH_SHORT).show();

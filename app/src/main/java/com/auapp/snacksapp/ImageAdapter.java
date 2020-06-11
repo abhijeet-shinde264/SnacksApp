@@ -20,7 +20,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     private Context mContext;
     private List<Upload> mUploads;
-    private AdapterView.OnItemClickListener mListener;
+   // private AdapterView.OnItemClickListener mListener;
     public ImageAdapter(Context mContext, List<Upload> mUploads) {
         this.mContext = mContext;
         this.mUploads = mUploads;
@@ -52,7 +52,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return mUploads.size();
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ImageViewHolder extends RecyclerView.ViewHolder{
         public TextView img_description,quant;
         public ImageView image_view;
         public Button b1;
@@ -75,9 +75,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
          *
          * @param v The view that was clicked.
          */
-        @Override
-        public void onClick(View v) {
-
-        }
     }
 }

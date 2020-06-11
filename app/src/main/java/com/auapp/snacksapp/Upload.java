@@ -6,6 +6,9 @@ class Upload {
     private String imgUrl;
     private String mKey;
 
+    public Upload() {
+    }
+
     public Upload(String name, String quantity, String imgUrl) {
         this.name = name;
         this.quantity = quantity;

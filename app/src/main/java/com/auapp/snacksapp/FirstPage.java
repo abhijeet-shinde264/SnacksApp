@@ -61,6 +61,7 @@ public class FirstPage extends AppCompatActivity {
         itname = findViewById(R.id.item_name);
         quantity = findViewById(R.id.quantit);
         add = findViewById(R.id.additem);
+        uploadProgress = findViewById(R.id.uploadProgress);
         mStorageRef = FirebaseStorage.getInstance().getReference().child("Items");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Items");
         img.setOnClickListener(new View.OnClickListener() {
