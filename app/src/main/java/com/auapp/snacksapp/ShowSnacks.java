@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -41,6 +43,7 @@ public class ShowSnacks extends AppCompatActivity{
 
     private DatabaseReference mDatabaseRef;
     private List<Upload> mUploads;
+
    // FloatingActionButton fb;
     FirebaseAuth mauth;
     String currentuserid;
@@ -78,49 +81,55 @@ public class ShowSnacks extends AppCompatActivity{
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isOpen){
-                    up.setVisibility(View.INVISIBLE);
-                    del.setVisibility(View.INVISIBLE);
-                    add.setVisibility(View.INVISIBLE);
-                    fab2_delete.setAnimation(fab_close);
-                    fab1_update.setAnimation(fab_close);
-                    fab3_add.setAnimation(fab_close);
-                    fab_main.setAnimation(fab_anticlock);
-                    fab2_delete.setClickable(false);
-                    fab1_update.setClickable(false);
-                    fab3_add.setClickable(false);
-                    isOpen = false;
-                }else {
-                    up.setVisibility(View.VISIBLE);
-                    del.setVisibility(View.VISIBLE);
-                    add.setVisibility(View.VISIBLE);
-                    fab2_delete.startAnimation(fab_open);
-                    fab1_update.startAnimation(fab_open);
-                    fab3_add.startAnimation(fab_open);
-                    fab_main.startAnimation(fab_clock);
-                    fab2_delete.setClickable(true);
-                    fab1_update.setClickable(true);
-                    fab3_add.setClickable(true);
-                    isOpen = true;
-                }
+                openDialog();
             }
         });
-        fab2_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //openDialogDelete();
-                //Toast.makeText(getApplicationContext(), "Delete", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), "Page Under Development", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        fab1_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Page Under Development", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+//        fab_main.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(isOpen){
+//                    up.setVisibility(View.INVISIBLE);
+//                    del.setVisibility(View.INVISIBLE);
+//                    add.setVisibility(View.INVISIBLE);
+//                    fab2_delete.setAnimation(fab_close);
+//                    fab1_update.setAnimation(fab_close);
+//                    fab3_add.setAnimation(fab_close);
+//                    fab_main.setAnimation(fab_anticlock);
+//                    fab2_delete.setClickable(false);
+//                    fab1_update.setClickable(false);
+//                    fab3_add.setClickable(false);
+//                    isOpen = false;
+//                }else {
+//                    up.setVisibility(View.VISIBLE);
+//                    del.setVisibility(View.VISIBLE);
+//                    add.setVisibility(View.VISIBLE);
+//                    fab2_delete.startAnimation(fab_open);
+//                    fab1_update.startAnimation(fab_open);
+//                    fab3_add.startAnimation(fab_open);
+//                    fab_main.startAnimation(fab_clock);
+//                    fab2_delete.setClickable(true);
+//                    fab1_update.setClickable(true);
+//                    fab3_add.setClickable(true);
+//                    isOpen = true;
+//                }
+//            }
+//        });
+//        fab2_delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //openDialogDelete();
+//                //Toast.makeText(getApplicationContext(), "Delete", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Page Under Development", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        fab1_update.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getApplicationContext(), "Page Under Development", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
         fab3_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,32 +179,52 @@ public class ShowSnacks extends AppCompatActivity{
 //            }
 //        });
     }
-
-    private void openDialogDelete() {
-        View view = LayoutInflater.from(ShowSnacks.this).inflate(R.layout.dialog_show,null);
-        final EditText email = view.findViewById(R.id.email111);
-        AlertDialog.Builder builder = new AlertDialog.Builder(ShowSnacks.this);
-        builder.setMessage("Please enter your email")
-                .setView(view)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String em = email.getText().toString().trim();
-                        if (em.equals("abhijeetshinde1999@gmail.com")){
-                            startActivity(new Intent(ShowSnacks.this,DeletePage.class));
-                        }else{
-                            Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle item selection
+//        switch (item.getItemId()) {
+//            case R.id.logout:
+//                FirebaseAuth.getInstance().signOut();
+//                Intent I = new Intent(ShowSnacks.this, MainActivity.class);
+//                startActivity(I);
+//                Toast.makeText(getApplicationContext(),"Login to continue", Toast.LENGTH_SHORT).show();
+//                finish();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
+//    private void openDialogDelete() {
+//        View view = LayoutInflater.from(ShowSnacks.this).inflate(R.layout.dialog_show,null);
+//        final EditText email = view.findViewById(R.id.email111);
+//        AlertDialog.Builder builder = new AlertDialog.Builder(ShowSnacks.this);
+//        builder.setMessage("Please enter your email")
+//                .setView(view)
+//                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String em = email.getText().toString().trim();
+//                        if (em.equals("abhijeetshinde1999@gmail.com")){
+//                            startActivity(new Intent(ShowSnacks.this,DeletePage.class));
+//                        }else{
+//                            Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                //Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        AlertDialog alertDialog = builder.create();
+//        alertDialog.show();
+//    }
 
     private void openDialog() {
 //        ExampleDialog dialog = new ExampleDialog();
@@ -231,8 +260,51 @@ public class ShowSnacks extends AppCompatActivity{
             case android.R.id.home:
                 finish();
                 return true;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                Intent I = new Intent(ShowSnacks.this, MainActivity.class);
+                startActivity(I);
+                Toast.makeText(getApplicationContext(),"Login to continue", Toast.LENGTH_SHORT).show();
+                finish();
+                return true;
+            case R.id.show:
+                openDialogShow();
+                return true;
+            case R.id.email:
+                startActivity(new Intent(ShowSnacks.this,SendEmail.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+//        return super.onOptionsItemSelected(item);
+    }
+
+
+
+    private void openDialogShow() {
+        View view = LayoutInflater.from(ShowSnacks.this).inflate(R.layout.dialog_show,null);
+        final EditText email = view.findViewById(R.id.email111);
+        AlertDialog.Builder builder = new AlertDialog.Builder(ShowSnacks.this);
+        builder.setMessage("Please enter your email")
+                .setView(view)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String em = email.getText().toString().trim();
+                        if (em.equals("abhijeetshinde1999@gmail.com")){
+                            startActivity(new Intent(ShowSnacks.this,ShowUsers.class));
+                        }else{
+                            Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Toast.makeText(ShowSnacks.this, "Sorry your not admin", Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }
