@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#285FBA">
+    android:background="@drawable/bg1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="216dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logo"
+            android:layout_gravity="center"/>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,10 +43,11 @@
             <EditText
                 android:id="@+id/lgemail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bt_design"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:ems="10"
                 android:hint="Email"
@@ -45,18 +59,18 @@
             <EditText
                 android:id="@+id/lgpass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:layout_marginTop="50dp"
-                android:hint="Password"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:textColor="#090909"
+                android:layout_height="62dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bt_design"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
-                />
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#090909"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/login"
@@ -106,5 +120,5 @@
 
     </LinearLayout>
 
-
-</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</ScrollView>

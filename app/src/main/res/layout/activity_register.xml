@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:background="#285FBA">
+    android:background="@drawable/bg5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,73 +20,79 @@
             android:text="Registration Page"
             android:textAlignment="center"
             android:textSize="40dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
 
 
         <EditText
             android:id="@+id/signame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Name"
+            android:background="@drawable/bt_design"
             android:drawableLeft="@drawable/ic_baseline_person_24"
-            android:textSize="15dp"/>
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/sigdeg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="39dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
-            android:ems="10"
+            android:background="@drawable/bt_design"
             android:drawableLeft="@drawable/ic_baseline_how_to_reg_24"
-            android:inputType="textPersonName"
+            android:ems="10"
             android:hint="Designation"
-            android:textSize="15dp"/>
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/sigemail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="41dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/bt_design"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
             android:ems="10"
-            android:inputType="textEmailAddress"
-            android:textSize="15dp"
             android:hint="Email-Id"
-            android:drawableLeft="@drawable/ic_baseline_email_24"/>
+            android:inputType="textEmailAddress"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/sigpass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/bt_design"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="15dp"
             android:hint="Password"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+            android:inputType="textPassword"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/conpass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/bt_design"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="15dp"
             android:hint="Conform Password"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+            android:inputType="textPassword"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/register"
