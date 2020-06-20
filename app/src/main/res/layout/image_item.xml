@@ -28,22 +28,21 @@
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/imagepreview"
+            android:layout_height="204dp"
             android:scaleType="centerInside"
-            />
+            android:src="@drawable/imagepreview" />
 
         <TextView
             android:id="@+id/qu"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:text="Quantity"
             android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

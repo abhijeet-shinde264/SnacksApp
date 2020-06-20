@@ -1,20 +1,13 @@
 package com.auapp.snacksapp;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -31,6 +24,17 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         this.mUploads = mUploads;
     }
 
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        onItemClickListener = listener;
+    }
+
+
+    public interface OnItemClickListener{
+        void onItemClick(int position1);
+    }
+
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,10 +44,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+        //final String key = mUploads.get(position).getmKey();
         Upload uploadCur=mUploads.get(position);
         holder.img_description.setText(uploadCur.getName());
         holder.quant.setText(uploadCur.getQuantity());
-        Picasso.with(mContext)
+        Picasso.get()
                 .load(uploadCur.getImgUrl())
                 .placeholder(R.drawable.imagepreview)
                 .fit()
@@ -66,6 +71,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             img_description=itemView.findViewById(R.id.img_description);
             image_view=itemView.findViewById(R.id.image_view);
             quant = itemView.findViewById(R.id.qu);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(onItemClickListener != null){
+                        int pos = getAdapterPosition();
+                        if (pos != RecyclerView.NO_POSITION){
+                            onItemClickListener.onItemClick(pos);
+                        }
+                    }
+                }
+            });
+//            key = getAdapterPosition();
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -101,6 +118,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 //                    });
 //                    AlertDialog alertDialog = builder.create();
 //                    alertDialog.show();
+//                }
+//            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent i1 = new Intent(mContext,BuyItems.class);
+//                    i1.putExtra("key",key);
 //                }
 //            });
         }

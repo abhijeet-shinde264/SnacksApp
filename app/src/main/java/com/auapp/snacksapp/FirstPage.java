@@ -1,9 +1,5 @@
 package com.auapp.snacksapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,6 +14,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -113,7 +113,7 @@ public class FirstPage extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 imgUrl = result.getUri();
-                Picasso.with(this).load(imgUrl).networkPolicy(NetworkPolicy.OFFLINE).into(img);
+                Picasso.get().load(imgUrl).networkPolicy(NetworkPolicy.OFFLINE).into(img);
                 File crop_path=new File(imgUrl.getPath());
                 try {
                     compressedImageFile=new Compressor(this)

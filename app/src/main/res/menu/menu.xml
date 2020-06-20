@@ -3,7 +3,13 @@
     <item android:id="@+id/logout"
         android:title="@string/logout"/>
     <item android:id="@+id/show"
-        android:title="Show Users"/>
+        android:title="Show Users"
+        android:visible="false"/>
     <item android:id="@+id/email"
         android:title="Request for snacks"/>
+    <item android:id="@+id/showbuy1"
+        android:title="Show Buyers"
+        android:visible="false"/>
+<!--    <item android:id="@+id/profi"-->
+<!--        android:title="Profile"/>-->
 </menu>
