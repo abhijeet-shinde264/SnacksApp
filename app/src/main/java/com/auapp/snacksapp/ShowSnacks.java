@@ -284,8 +284,6 @@ public static class ViewHolder12 extends RecyclerView.ViewHolder{
 //        alertDialog.show();
 //    }
     private void openDialog() {
-//        ExampleDialog dialog = new ExampleDialog();
-//        dialog.show(getSupportFragmentManager(),"Enter email id.");
 
         View view = LayoutInflater.from(ShowSnacks.this).inflate(R.layout.dialog_show,null);
         final EditText email = view.findViewById(R.id.email111);
@@ -327,16 +325,11 @@ public static class ViewHolder12 extends RecyclerView.ViewHolder{
                 startActivity(new Intent(ShowSnacks.this,ShowBuyers.class));
                 return true;
             case R.id.show:
-//                if()
-//                openDialogShow();
                 startActivity(new Intent(ShowSnacks.this,ShowUsers.class));
                 return true;
             case R.id.email:
                 startActivity(new Intent(ShowSnacks.this,SendEmail.class));
                 return true;
-//            case R.id.profi:
-//                startActivity(new Intent(ShowSnacks.this,ProfileActivity.class));
-//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -21,7 +21,8 @@
             android:textAlignment="center"
             android:textSize="40dp"
             android:textStyle="bold"
-            android:textColor="#ffffff"/>
+            android:textColor="#000000"
+            android:fontFamily="cursive"/>
 
 
         <EditText
@@ -41,7 +42,7 @@
         <EditText
             android:id="@+id/sigdeg"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_height="43dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
@@ -55,7 +56,7 @@
         <EditText
             android:id="@+id/sigemail"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
+            android:layout_height="43dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
@@ -69,7 +70,7 @@
         <EditText
             android:id="@+id/sigpass"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="43dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
@@ -83,7 +84,7 @@
         <EditText
             android:id="@+id/conpass"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="43dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
