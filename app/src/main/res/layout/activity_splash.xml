@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Splash"
-    android:background="@drawable/bg7">
+    android:background="@drawable/foodbg3">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,7 +24,7 @@
         android:gravity="center_horizontal"
         android:text="Come and have fun"
         android:textAlignment="center"
-        android:textColor="#ffffff"
+        android:textColor="#050505"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

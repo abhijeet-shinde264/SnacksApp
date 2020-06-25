@@ -54,7 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="decreaseInteger"
-            android:text="-" />
+            android:text="-"
+            android:background="@drawable/button_background_1"/>
 
         <TextView
             android:id="@+id/integer_number"
@@ -73,7 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="increaseInteger"
-            android:text="+" />
+            android:text="+"
+            android:background="@drawable/button_background_1" />
     </LinearLayout>
 
     <Button
@@ -83,7 +85,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/button_background_1"
         android:text="Add item" />
 
     <ProgressBar

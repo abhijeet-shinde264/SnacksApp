@@ -4,7 +4,8 @@
     android:layout_height="425dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="#D5FB6D00">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
             android:text="Image Caption/Description"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_purple"
+            android:textColor="@android:color/primary_text_light"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -42,7 +43,8 @@
             android:text="Quantity"
             android:textAlignment="center"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/primary_text_light"/>
 
 
     </LinearLayout>
