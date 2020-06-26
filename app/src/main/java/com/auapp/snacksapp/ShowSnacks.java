@@ -57,6 +57,8 @@ public class ShowSnacks extends AppCompatActivity {
         email1=user.getEmail();
 //        FirebaseUser user = mauth.getCurrentUser();
 //        email1 = user.getEmail();
+        final String mail1=mauth.getCurrentUser().getEmail();
+        final String email1="abhijeetshinde1999@gmail.com";
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -67,7 +69,9 @@ public class ShowSnacks extends AppCompatActivity {
         fab1_update = findViewById(R.id.fab1_up);
         fab2_delete = findViewById(R.id.fab2_del);
         fab3_add = findViewById(R.id.fab3_addddd);
-
+        if (mail1.equals(email1)) {
+            fab_main.setVisibility(View.VISIBLE);
+        }
 //        fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
 //        fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
 //        fab_clock = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_rotate_clock);
@@ -75,10 +79,12 @@ public class ShowSnacks extends AppCompatActivity {
         up = findViewById(R.id.update);
         del = findViewById(R.id.delete);
         add = findViewById(R.id.addaa);
+
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDialog();
+//                openDialog();
+                startActivity(new Intent(ShowSnacks.this,FirstPage.class));
             }
         });
 //        fab_main.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +335,9 @@ public static class ViewHolder12 extends RecyclerView.ViewHolder{
                 return true;
             case R.id.email:
                 startActivity(new Intent(ShowSnacks.this,SendEmail.class));
+                return true;
+            case R.id.history:
+                startActivity(new Intent(ShowSnacks.this,UserHistory.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

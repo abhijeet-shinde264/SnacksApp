@@ -2,16 +2,25 @@ package com.auapp.snacksapp;
 
 class BuyerData {
 
-    String na,quan,ite;
+    String na,quan,ite,email;
 
-    public BuyerData(String na, String quan, String ite) {
+    public BuyerData(String na, String quan, String ite, String email) {
         this.na = na;
         this.quan = quan;
         this.ite = ite;
+        this.email = email;
     }
 
     public String getIte() {
         return ite;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setIte(String ite) {

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstPage"
-    android:background="@drawable/bg_grident">
+    tools:context=".FirstPage">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"

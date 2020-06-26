@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 public class BuyItems extends AppCompatActivity {
 
     TextView t1,t2;
-    EditText e1,e2;
+    EditText e1,e2,e3;
     ImageView i11;
     Button b1;
     String name,img,postkey,quan;
@@ -41,6 +41,7 @@ public class BuyItems extends AppCompatActivity {
         b1 = findViewById(R.id.buybutton);
         e1 = findViewById(R.id.numquantity);
         e2 = findViewById(R.id.buyname);
+        e3 = findViewById(R.id.buyemail);
         data = new BuyerData();
         //Intent i1 = getIntent();
         postkey = getIntent().getStringExtra("key");
@@ -60,10 +61,8 @@ public class BuyItems extends AppCompatActivity {
                         .centerCrop()
                         .into(i11);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
         b1.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +76,7 @@ public class BuyItems extends AppCompatActivity {
                 }else{
                     data.setNa(e2.getText().toString().trim());
                     data.setQuan(e1.getText().toString().trim());
+                    data.setEmail(e3.getText().toString().trim());
                     data.setIte(name.trim());
                     ref2.push().setValue(data);
                     Toast.makeText(BuyItems.this, "Thanks for buying", Toast.LENGTH_SHORT).show();

@@ -170,6 +170,7 @@
             android:elevation="16dp"
             android:focusable="true"
             app:backgroundTint="#ffffff"
+            android:visibility="invisible"
             app:pressedTranslationZ="12dp"
             app:srcCompat="@drawable/ic_baseline_add_24"
             android:layout_alignParentRight="true"
